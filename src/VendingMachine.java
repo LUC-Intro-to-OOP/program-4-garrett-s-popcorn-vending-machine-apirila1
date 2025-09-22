@@ -105,8 +105,20 @@ public class VendingMachine {
 
         // Output of Popcorns to choose from 
 
+        System.out.println("Row\t\t Column P \t\t Column N \t\t\t Column R");
+        for (int r = 0; r < ROWS; r++) {
+        System.out.println(
+            r + "\t\t" +
+            POPCORN [r][0] + "\t\t" +
+            POPCORN [r][1] + "\t\t" +
+            POPCORN [r][2]
+            );
+        
+        }
         System.out.println("Listed above are items you can select.");
-        System.out.println("Please enter for of desired product: ");
+        System.out.println("Please enter row for of desired product: ");
+
+
         System.out.println("Please enter a column of desired product: ");
 
         // Looping Structure that allows for continuous iteration and checks for sentinel value
@@ -115,7 +127,7 @@ public class VendingMachine {
         System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
 
         // Selection outpring
-        System.out.println("You enter selected " + )
+       
 
 
     }//END OF MAIN
