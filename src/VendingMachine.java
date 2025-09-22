@@ -113,20 +113,47 @@ public class VendingMachine {
             POPCORN [r][1] + "\t\t" +
             POPCORN [r][2]
             );
-        
+
         }
+
+        // Looping until correct row has been selected
+
+        while (true) {
         System.out.println("Listed above are items you can select.");
-        System.out.println("Please enter row for of desired product: ");
+        System.out.print("Please enter row for of desired product: ");
+        int row = scn.nextInt();
+            if (row == EXIT) {
+                break;
+            }
+            if (row<0 || row >+ROWS) {
+                System.out.println("Invalid Entry, Please enter a row of desired product: ");
+                continue;
+            }
 
+        }
 
+        // Looping until correct column has been selected
         System.out.println("Please enter a column of desired product: ");
+        String column = scn.next().toUpperCase();
+
+
+
+
+
+
+
 
         // Looping Structure that allows for continuous iteration and checks for sentinel value
 
-        System.out.println("Invalid Entry, Please enter a row of desired product: ");
+        
         System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
 
-        // Selection outpring
+        // Outprint of Summary information
+        System.out.println("Summary of Items Purchased");
+        System.out.println("*****************************");
+        System.out.println(itemsPurchased + " items purchased for a total cost of $: " + totalCost);
+        System.out.println("\n");
+        System.out.println("*****************************");
        
 
 
