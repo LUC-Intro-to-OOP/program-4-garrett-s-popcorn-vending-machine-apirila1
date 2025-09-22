@@ -35,14 +35,22 @@ The .gif below show three iterations of running the program
  */
 
 import java.util.Scanner; //Import the Scanner Class
+
 public class VendingMachine {
     public static void main(String[] args) throws Exception {
      
-        // Declare Variables and CONSTANTS
+        // Declare Sentinel Value, Variables and CONSTANTS
 
+       int itemsPurchased = 0;
+       double totalCost= 0.0;
         final int EXIT = -1;
         final int ROWS = 3;
         final int COLUMNS = 3;
+
+        final int ROW_1 = 1;
+        final int ROW_2 = 2;
+        final int ROW_3 = 3;
+
 
         final String POPCORN_1 = "Garrett Mix";
         final String POPCORN_2 = "Caramel Crisp";
@@ -53,6 +61,10 @@ public class VendingMachine {
         final String POPCORN_7 = "Plain";
         final String POPCORN_8 = "Buttery";
         final String POPCORN_9 = "Sweet Corn";
+
+        final String COLUMN_1 = "P";
+        final String COLUMN_2 = "N";
+        final String COLUMN_3 = "R";
 
         final double GARRETT_MIX = 14.99;
         final double CARAMEL_CRISP = 16.99;
@@ -65,8 +77,46 @@ public class VendingMachine {
         final double SWEET_CORN = 7.99;
         
 
+        // Array for the popcorn's product names
 
-    
+        final String [][] POPCORN = {
+            {"Garrett Mix", "Pecan Carmel Crisp", "Plain"},
+            {"Caramel Crisp", "Cashew Carmel Crisp", "Buttery"},
+            {"Cheese Corn", "Almond Carmel Crisp", "Sweet Corn"}
+        };
+        
+        // Array for the popcorn's product prices
+
+        final double [] [] PRICES = {
+            {14.99, 10.99, 6.99},
+            {16.99, 9.99, 8.99},
+            {12.99, 11.99, 7.99}
+        };
+
+        //Initiate Scanner Object
+
+        Scanner scn = new Scanner (System.in);
+
+        // Welcome Message
+        System.out.println("Welcome to Garret's Popcorn Vending Machine!");
+
+        // Create Space
+        System.out.println("");
+
+        // Output of Popcorns to choose from 
+
+        System.out.println("Listed above are items you can select.");
+        System.out.println("Please enter for of desired product: ");
+        System.out.println("Please enter a column of desired product: ");
+
+        // Looping Structure that allows for continuous iteration and checks for sentinel value
+
+        System.out.println("Invalid Entry, Please enter a row of desired product: ");
+        System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
+
+        // Selection outpring
+        System.out.println("You enter selected " + )
+
 
     }//END OF MAIN
 
