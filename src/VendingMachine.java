@@ -1,4 +1,5 @@
 // Anna Briggs Pirila 
+// Test 2
 
 /**
  * Garrett's popcorn vending machine
@@ -37,7 +38,35 @@ import java.util.Scanner; //Import the Scanner Class
 public class VendingMachine {
     public static void main(String[] args) throws Exception {
      
+        // Declare Variables and CONSTANTS
 
+        final int EXIT = -1;
+        final int ROWS = 3;
+        final int COLUMNS = 3;
+
+        final String POPCORN_1 = "Garrett Mix";
+        final String POPCORN_2 = "Caramel Crisp";
+        final String POPCORN_3 = "Cheese Corn";
+        final String POPCORN_4 = "Pecan Carmel Crisp";
+        final String POPCORN_5 = "Cashew Carmel Crisp";
+        final String POPCORN_6 = "Almond Carmel Crisp";
+        final String POPCORN_7 = "Plain";
+        final String POPCORN_8 = "Buttery";
+        final String POPCORN_9 = "Sweet Corn";
+
+        final double GARRETT_MIX = 14.99;
+        final double CARAMEL_CRISP = 16.99;
+        final double CHEESE_CORN = 12.99;
+        final double PECAN_CRISP = 10.99;
+        final double CASHEW_CRISP = 9.99;
+        final double ALMOND_CRISP = 11.99;
+        final double PLAIN_CORN = 6.99;
+        final double BUTTER_CORN = 8.99;
+        final double SWEET_CORN = 7.99;
+        
+
+
+    
 
     }//END OF MAIN
 
