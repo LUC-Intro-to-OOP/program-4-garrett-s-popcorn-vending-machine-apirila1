@@ -43,6 +43,7 @@ public class VendingMachine {
 
        int itemsPurchased = 0;
        double totalCost= 0.0;
+
         final int EXIT = -1;
         final int ROWS = 3;
         final int COLUMNS = 3;
@@ -104,7 +105,8 @@ public class VendingMachine {
         System.out.println("");
 
         // Output of Popcorns to choose from 
-
+        while (true) {
+        
         System.out.println("Row\t\t Column P \t\t Column N \t\t\t Column R");
         for (int r = 0; r < ROWS; r++) {
         System.out.println(
@@ -113,49 +115,55 @@ public class VendingMachine {
             POPCORN [r][1] + "\t\t" +
             POPCORN [r][2]
             );
-
-        }
-
-        // Looping until correct row has been selected
-
-        while (true) {
+    
+             }
+          
+        // Looping until correct row has been selected & checks for sentinel value
         System.out.println("Listed above are items you can select.");
-        System.out.print("Please enter row for of desired product: ");
+        System.out.print("Please enter row for of desired product or -1 to EXIT: ");
         int row = scn.nextInt();
             if (row == EXIT) {
                 break;
             }
-            if (row<0 || row >+ROWS) {
+            if (row < 0 || row >= ROWS) {
                 System.out.println("Invalid Entry, Please enter a row of desired product: ");
                 continue;
             }
 
+            // Loop w/ in loop for column until correct row has been selected & checks for sentinel value
+
+            System.out.print("Please enter a column of desired product: ");
+            String column = scn.next().toUpperCase();
+            int colName = -1;
+
+            switch (column) {
+                case "P": colName = 0; break;
+                case "N": colName = 1; break;
+                case "R": colName = 2; break;
+                default: colName = -1; break;
+                }
+
+                if (colName == -1) {
+                System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
+                continue;
+                }
+
+            // Popcorn selection and price to pay
+            System.out.println("You enter selected " + POPCORN[row][colName] + "for a price of $" + PRICES [row][colName]);
+            itemsPurchased++;
+            totalCost += PRICES[row][colName];
+
         }
 
-        // Looping until correct column has been selected
-        System.out.println("Please enter a column of desired product: ");
-        String column = scn.next().toUpperCase();
-
-
-
-
-
-
-
-
-        // Looping Structure that allows for continuous iteration and checks for sentinel value
-
-        
-        System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
 
         // Outprint of Summary information
-        System.out.println("Summary of Items Purchased");
+        System.out.println(" \nSummary of Items Purchased");
         System.out.println("*****************************");
-        System.out.println(itemsPurchased + " items purchased for a total cost of $: " + totalCost);
+        System.out.println(itemsPurchased + " items purchased for a total cost of $" + totalCost);
         System.out.println("\n");
         System.out.println("*****************************");
        
-
+    
 
     }//END OF MAIN
 
