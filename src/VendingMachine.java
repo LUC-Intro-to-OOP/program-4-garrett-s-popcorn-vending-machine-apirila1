@@ -135,7 +135,7 @@ public class VendingMachine {
             }
 
             if (!rowInput.matches("\\d+")) {
-                System.out.println("Invalid Entry, Please enter a row of desired product: ");
+                System.out.print("Invalid Entry, Please enter a row of desired product: ");
                 continue;
             }
 
@@ -144,7 +144,7 @@ public class VendingMachine {
                 break;
             }
                 else {
-                System.out.println("Invalid Entry, Please enter a row of desired product: ");
+                System.out.print("Invalid Entry, Please enter a row of desired product: ");
             }
         }
             if (row == EXIT) break;
@@ -164,7 +164,7 @@ public class VendingMachine {
                 if (column.equals("P")) {colName = 0; break; }
                 else if (column.equals("N")) {colName = 1; break;}
                 else if (column.equals("R")) {colName = 2; break;}
-                 System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
+                 System.out.print("Invalid Entry, Please enter either capital P, N or R of desired product: ");
                 }
 
             // Popcorn selection and price to pay
