@@ -1,5 +1,4 @@
 // Anna Briggs Pirila 
-// Test 2
 
 /**
  * Garrett's popcorn vending machine
@@ -120,36 +119,56 @@ public class VendingMachine {
           
         // Looping until correct row has been selected & checks for sentinel value
         System.out.println("Listed above are items you can select.");
+       
+        int row;
+        boolean firstRowTry = true;
+        while (true) {
+            if (firstRowTry) {
         System.out.print("Please enter row for of desired product or -1 to EXIT: ");
-        int row = scn.nextInt();
-            if (row == EXIT) {
+        firstRowTry = false;
+            }
+
+        String rowInput = scn.next();
+            if (rowInput.equals("-1")) {
+                row = EXIT;
                 break;
             }
-            if (row < 0 || row >= ROWS) {
+
+            if (!rowInput.matches("\\d+")) {
                 System.out.println("Invalid Entry, Please enter a row of desired product: ");
                 continue;
             }
 
+            row = Integer.parseInt(rowInput);
+            if (row >= 0 && row < ROWS)  {
+                break;
+            }
+                else {
+                System.out.println("Invalid Entry, Please enter a row of desired product: ");
+            }
+        }
+            if (row == EXIT) break;
+
             // Loop w/ in loop for column until correct row has been selected & checks for sentinel value
-
-            System.out.print("Please enter a column of desired product: ");
-            String column = scn.next().toUpperCase();
+            
             int colName = -1;
-
-            switch (column) {
-                case "P": colName = 0; break;
-                case "N": colName = 1; break;
-                case "R": colName = 2; break;
-                default: colName = -1; break;
+            boolean firstTry = true;
+            while (true) {
+                if (firstTry) {
+                System.out.print("Please enter a column of desired product: ");
+                firstTry = false;
                 }
+            String column = scn.next().toUpperCase();
 
-                if (colName == -1) {
-                System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
-                continue;
+
+                if (column.equals("P")) {colName = 0; break; }
+                else if (column.equals("N")) {colName = 1; break;}
+                else if (column.equals("R")) {colName = 2; break;}
+                 System.out.println("Invalid Entry, Please enter either capital P, N or R of desired product: ");
                 }
 
             // Popcorn selection and price to pay
-            System.out.println("You enter selected " + POPCORN[row][colName] + "for a price of $" + PRICES [row][colName]);
+            System.out.println("You enter selected " + POPCORN[row][colName] + " for a price of $" + PRICES [row][colName]);
             itemsPurchased++;
             totalCost += PRICES[row][colName];
 
