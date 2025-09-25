@@ -168,7 +168,7 @@ public class VendingMachine {
                 }
 
             // Popcorn selection and price to pay
-            System.out.println("You enter selected " + POPCORN[row][colName] + " for a price of $" + PRICES [row][colName]);
+            System.out.println("You enter selected " + POPCORN[row][colName] + " for a price of " + PRICES [row][colName]);
             itemsPurchased++;
             totalCost += PRICES[row][colName];
 
